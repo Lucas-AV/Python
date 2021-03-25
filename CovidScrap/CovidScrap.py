@@ -204,4 +204,4 @@ def ExecuteScript():
 	CreateCSV_XLSX(RefList=CovidData)
 	TargetFile = 'Covid.xlsx'
 	EasyDB(File=TargetFile)
-ExecuteScript()
+	
