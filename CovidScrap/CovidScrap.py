@@ -200,8 +200,9 @@ def EasyDB(File):
 	os.replace(f'{Download_Path}\\{Pattern_Name}',f"{xlsx_path}\\{Pattern_Name}") # Coloca o arquivo baixado (data.txt) na mesma pasta que o Excel (Covid.xlsx)
 
 def ExecuteScript():
-	CovidData = BaseScrap(False)
+	CovidData = BaseScrap(True)
 	CreateCSV_XLSX(RefList=CovidData)
 	TargetFile = 'Covid.xlsx'
 	EasyDB(File=TargetFile)
 	
+ExecuteScript()
