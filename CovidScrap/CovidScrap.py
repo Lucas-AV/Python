@@ -12,7 +12,7 @@ def BaseScrap(View=True):
 	url = "https://www.worldometers.info/coronavirus/" # link para coleta de dados
 	hdr = {"User-Agent": "Mozilla/5.0"} # Linha de comando utilizada para previnir o erro 503 (DENIED ACESS)
 	req = Request(url,headers=hdr) # Entra na página como "User-Agent" usando o navegador Mozilla/5.0
-	page = BeautifulSoup(urlopen(req),'html.parser') # Mostra o código url da página
+	page = BeautifulSoup(urlopen(req),'html.parser')
 	
 	# Extra Info (All Countrys + Country Population)
 	extra_info = page.select("div tbody tr td a") # Procura pelos paises dentro do código html 
