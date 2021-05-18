@@ -3,7 +3,7 @@ O código do CovidScrap foi feito para coletar informações a respeito da pande
 
 Os módulos principais do script são:
 1. pandas
-2. selenium
+2. selenium (Requer o chromium e o webdriver na mesma versão do google chrome!)
 3. numpy
 4. BeatifulSoup
 5. re (Regular Expressions)
