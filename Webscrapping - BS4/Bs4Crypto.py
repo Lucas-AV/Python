@@ -1,17 +1,10 @@
 from urllib.request import urlopen, Request
-from win10toast import ToastNotifier
 from datetime import datetime
 from bs4 import BeautifulSoup
 from time import sleep
 import re, os
 
 C = 1
-toaster = ToastNotifier()
-
-class Crypto:
-	def __init__(self):
-		self.name = "Crypto"
-		self.html = None
 
 Price = []
 Prices = {
@@ -61,16 +54,16 @@ def CryptoScrap(CryptoUrls = urls):
 	# Loop
 	for url in CryptoUrls:
 		CodeCoin = f"{url[-7:-4].upper()}-{url[-3:].upper()}"
-		hdr = {"User-Agent": "Mozilla/5.0"} 							# Linha de comando utilizada para previnir o erro 503 (DENIED ACESS)
-		req = Request(url,headers=hdr) 									# Entra na página como "User-Agent" usando o navegador Mozilla/5.0
+		hdr = {"User-Agent": "Mozilla/5.0"} 						# Linha de comando utilizada para previnir o erro 503 (DENIED ACESS)
+		req = Request(url,headers=hdr) 							# Entra na página como "User-Agent" usando o navegador Mozilla/5.0
 		page = BeautifulSoup(urlopen(req),'html.parser') 				# Mostra o código url da página
-		pattern = '<.*?id="last_last".*?>.*?<.*?>' 						# Padrão a ser buscado pelo módulo re
+		pattern = '<.*?id="last_last".*?>.*?<.*?>' 					# Padrão a ser buscado pelo módulo re
 		
 		# Coleta de hora do sistema
 		now = datetime.now()
 
 		# Coleta de resultado
-		result = re.findall(pattern,str(page),re.IGNORECASE)			# re.IGNORECASE >>> Ignorar caixa alta
+		result = re.findall(pattern,str(page),re.IGNORECASE)				# re.IGNORECASE >>> Ignorar caixa alta
 		
 		# Processo de substituição de pontos e vírgulas
 		
